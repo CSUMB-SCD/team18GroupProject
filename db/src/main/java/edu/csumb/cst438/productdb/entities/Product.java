@@ -6,29 +6,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Product")
 public class Product {
     @Id
-    private int id;
+    private String id;
     private String name;
     private String desc;
     private double price;
-
-    public Product () {
-        name = "";
-        desc = "";
-        price = 0;
-    }
-
-    public Product (int id) {
-        this.id = id;
-        name = "";
-        desc = "";
-        price = 0;
-    }
-
-    public Product (String name) {
-        this.name = name;
-        desc = "";
-        price = 0;
-    }
 
     public Product (String name, String desc, double price) {
         this.name = name;
@@ -44,6 +25,10 @@ public class Product {
     }
     public void setPrice(double aPrice){
         price = aPrice;
+    }
+
+    public String getId(){
+        return this.id;
     }
 
     public String getName(){

@@ -7,11 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import edu.csumb.cst438.productdb.entities.Product;
+import edu.csumb.cst438.productdb.entities.Users;
 
 @Component
 public class ProductDbSeeder implements CommandLineRunner {
     @Autowired
     IProductRepository productRepo;
+
+    @Autowired
+    IUsersRepository usersRepo;
 
     public void run(String... args) throws Exception {
         Product sweater = new Product("Otter Sweater", "You otter warm up with this faux fur sweater!", 30.00);
@@ -23,5 +27,18 @@ public class ProductDbSeeder implements CommandLineRunner {
         //add db seeds
         List<Product> products = Arrays.asList(sweater, shorts, shoes);
         productRepo.saveAll(products);
+
+
+
+        Users one = new Users("Eros", "password");
+        Users two = new Users("Mark", "password");
+        Users three = new Users("Faith", "password");
+        Users four = new Users("Andrew", "password");
+   
+        //delete db data
+        usersRepo.deleteAll();;
+        //add db seeds
+        List<Users> users = Arrays.asList(one, two, three, four);
+        usersRepo.saveAll(users);
     }
 }

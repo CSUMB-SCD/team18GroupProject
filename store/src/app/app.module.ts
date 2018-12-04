@@ -9,11 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { SecondPageComponent } from './second-page/second-page.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { ProductService } from './product-list/product.service';
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   {path: 'first-page', component: FirstPageComponent},
-  {path: 'second-page', component: SecondPageComponent},
+  {path: 'product-list', component: ProductListComponent},
   {path: 'third-page', component: ThirdPageComponent}
 
 ];
@@ -23,12 +25,13 @@ const appRoutes: Routes = [
     AppComponent,
     MyNavComponent,
     FirstPageComponent,
-    SecondPageComponent,
-    ThirdPageComponent
+    ProductListComponent,
+    ThirdPageComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes),
     LayoutModule,
     MatToolbarModule,
@@ -37,7 +40,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatListModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

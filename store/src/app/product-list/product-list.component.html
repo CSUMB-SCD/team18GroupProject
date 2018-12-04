@@ -1,0 +1,22 @@
+<div class="product-content">
+    <h1 class="page-name">Products</h1>
+    <ul class="product-list">
+        <li *ngFor="let product of products">
+            <div class="product-row">
+                <div class="product-name">
+                    {{product.name}}
+                </div>
+                <img src="productPics/withAnimals/OtterSweater.png">
+                <div class="product-desc">
+                    {{product.desc}}
+                </div>
+                <div class="product-price">
+                    ${{product.price}}
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="no-products" *ngIf="products && products.length == 0">
+        <p>No Products Found!</p>
+    </div>
+</div>

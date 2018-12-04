@@ -1,4 +1,4 @@
-package edu.csumb.cst438.productdb.entities;
+package edu.csumb.cst438.projectdb.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

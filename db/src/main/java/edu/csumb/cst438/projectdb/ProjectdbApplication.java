@@ -1,12 +1,12 @@
-package edu.csumb.cst438.productdb;
+package edu.csumb.cst438.projectdb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductdbApplication {
+public class ProjectdbApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductdbApplication.class, args);
+		SpringApplication.run(ProjectdbApplication.class, args);
 	}
 }

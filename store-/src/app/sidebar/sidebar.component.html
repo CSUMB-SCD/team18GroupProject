@@ -1,0 +1,24 @@
+<nav>
+  <ul>
+      <li>
+          <a routerLink="home" [class.activated]="currentUrl == '/home'">
+            <i class="material-icons">home</i>
+          </a>
+        </li>
+    <li>
+      <a routerLink="" [class.activated]="currentUrl == '/users'">
+        <i class="material-icons">shop</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="signin" [class.activated]="currentUrl == '/sigin'">
+        <i class="material-icons">account_box</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="posts" [class.activated]="currentUrl == '/posts'">
+        <i class="material-icons">shopping_cart</i>
+      </a>
+    </li>
+  </ul>
+</nav>

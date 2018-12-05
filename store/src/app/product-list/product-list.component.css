@@ -1,0 +1,11 @@
+td {
+    padding: 24px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: arial, sans-serif;
+}
+.product-name {
+    font-weight: bold;
+}

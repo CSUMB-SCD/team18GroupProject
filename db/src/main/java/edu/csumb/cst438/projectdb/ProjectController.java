@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.csumb.cst438.projectdb.entities.Product;
-import edu.csumb.cst438.projectdb.entities.Users;
+import edu.csumb.cst438.projectdb.entities.User;
 
 @RestController
 public class ProjectController {
     @Autowired
     IProductRepository productRepository;
     @Autowired
-    IUsersRepository usersRepository;
+    IUserRepository userRepository;
 
     @GetMapping ("/allProducts")
     public List<Product> getAll () {
@@ -29,15 +29,15 @@ public class ProjectController {
         return result;
     }
 
-    @GetMapping ("/allUsers")
-    public List<Users> getAllUsers () {
-        List<Users> result = usersRepository.findAll();
+    @GetMapping ("/users")
+    public List<User> getAllUsers () {
+        List<User> result = userRepository.findAll();
         return result;
     }
     	
-    @GetMapping("/userid/{id}")
-    public Users getUserById (@PathVariable String id) {
-        Users result = usersRepository.findByRepoId(id);
+    @GetMapping("/user/{id}")
+    public User getUserById (@PathVariable String id) {
+        User result = userRepository.findByRepoId(id);
         return result;
     }
 

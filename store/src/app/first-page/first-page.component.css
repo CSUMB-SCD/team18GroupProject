@@ -1,0 +1,45 @@
+.form-group {
+    color: white;
+    margin: 24px;
+}
+
+label {
+    background-color: black;
+    margin-bottom: 24px;
+}
+
+.login {
+    margin: 24px;
+}
+
+.login-button {
+    border: 4px solid black;
+    background-color: black;
+    padding: 16px 24px;
+    margin: 24px 16px 24px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+}
+
+.submit-button {
+    border: 4px solid black;
+    background-color: black;
+    padding: 16px 24px;
+    margin: 24px 16px 24px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+}
+
+.signup-button {
+    border: 4px solid black;
+    background-color: transparent;
+    padding: 16px 24px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+}

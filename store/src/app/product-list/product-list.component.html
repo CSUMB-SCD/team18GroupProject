@@ -1,22 +1,47 @@
-<div class="product-content">
+<html>
+<head>
     <h1 class="page-name">Products</h1>
-    <ul class="product-list">
-        <li *ngFor="let product of products">
-            <div class="product-row">
-                <div class="product-name">
-                    {{product.name}}
-                </div>
-                <img src="productPics/withAnimals/OtterSweater.png">
-                <div class="product-desc">
-                    {{product.desc}}
-                </div>
-                <div class="product-price">
-                    ${{product.price}}
-                </div>
-            </div>
-        </li>
-    </ul>
-    <div class="no-products" *ngIf="products && products.length == 0">
-        <p>No Products Found!</p>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- <div>
+    <button (click)="showCart()">Cart</button>
+    <div [hidden]="!cartShowing">
+        <div id="overlay">
+            <div id="text">Overlay Text</div>
+        </div>
     </div>
+</div> -->
+<div class="product-list">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-sm-4">
+        <div class="product-contents">
+            <div class="product-name">
+                {{product.name}}
+            </div>
+            <img [src]="product.img" width="100%">
+            <div class="product-desc">
+                {{product.desc}}
+            </div>
+            <div class="product-price">
+                ${{product.price}}
+            </div>
+            <div class="product-price">
+                Available: {{product.stock}}
+            </div>
+            <select class="select-quantity">
+                <option *ngFor="let x of nums">{{x}}</option>
+            </select>
+            <input type="button" class="add-to-cart" ng-click="addItemToCart(product)" value="Add to cart" />
+        </div>
+    </div>
+  </div>
 </div>
+
+</body>
+</html>

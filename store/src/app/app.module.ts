@@ -14,7 +14,7 @@ import { ProductService } from './product-list/product.service';
 import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
-  {path: 'first-page', component: FirstPageComponent},
+  {path: '', component: FirstPageComponent},
   {path: 'product-list', component: ProductListComponent},
   {path: 'third-page', component: ThirdPageComponent}
 

@@ -4,4 +4,6 @@ export class Product {
     desc: String;
     price: any;
     img: String;
+    stock: any;
+    quantity: any;
   }

@@ -18,17 +18,16 @@ public class ProjectDbSeeder implements CommandLineRunner {
     IUsersRepository usersRepo;
 
     public void run(String... args) throws Exception {
-        Product sweater = new Product("Otter Sweater", "You otter warm up with this faux fur sweater!", 30.00, "entities/productPics/withAnimals/OtterSweater.png");
-        Product shorts = new Product("Otter Swimmers", "Swim around with the otters, in fashion, with these lightweight designed shorts!", 10.59, "/entities/productPics/withAnimals/OtterCardigan.png");
-        Product shoes = new Product("Otter Walkers", "Paddle your way through the sea of otters with these flippers!", 50.00, "./entities/productPics/withAnimals/OtterScarf.png");
-   
+        Product sweater = new Product("Otter Sweater", "You otter warm up with this faux fur sweater!", 30.00, "/src/assets/productPics/withAnimals/OtterSweater.png", 25);
+        Product shorts = new Product("Otter Swimmers", "Swim around with the otters, in fashion, with these lightweight designed shorts!", 10.59, "/src/assets/productPics/withAnimals/OtterCardigan.png", 25);
+        Product shoes = new Product("Otter Walkers", "Paddle your way through the sea of otters with these flippers!", 50.00, "/src/assets/productPics/withAnimals/OtterScarf.png", 25);
+        Product sweater2 = new Product("Otter Sweater", "You otter warm up with this faux fur sweater!", 30.00, "/src/assets/productPics/withAnimals/OtterSweater.png", 25);
+
         //delete db data
         productRepo.deleteAll();
         //add db seeds
-        List<Product> products = Arrays.asList(sweater, shorts, shoes);
+        List<Product> products = Arrays.asList(sweater, sweater2, shorts, shoes);
         productRepo.saveAll(products);
-
-
 
         Users one = new Users("Eros", "password");
         Users two = new Users("Mark", "password");

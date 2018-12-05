@@ -2,12 +2,12 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
-    <mat-toolbar style="color:white">The Seven Seas</mat-toolbar>
+      [opened]="(isHandset$ | async)">
+    <mat-toolbar style="color: white"><img class="otter" src="https://i.pinimg.com/originals/e5/1b/47/e51b4787edb3fccab15c372ad95c5afd.gif" ></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="['/']">Home - Pacific Ocean</a>
-      <a mat-list-item [routerLink]="['/product-list']">Clams</a>
-      <a mat-list-item [routerLink]="['/third-page']">Cart</a>
+      <a mat-list-item [routerLink]="['/']"><mat-icon>home</mat-icon></a>
+      <a mat-list-item [routerLink]="['/product-list']"><mat-icon>dashboard</mat-icon></a>
+      <a mat-list-item [routerLink]="['/third-page']"><mat-icon>shopping_cart</mat-icon></a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -17,12 +17,12 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="!(isHandset$ | async)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span></span>
+      <span><h1 class="w3-xxsmall w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Clam</b></span> <span class="w3-hide-small w3-text-light-grey"> Store</span></h1></span>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <router-outlet></router-outlet>
+    <div class="routes" ><router-outlet></router-outlet></div>
   </mat-sidenav-content>
 </mat-sidenav-container>

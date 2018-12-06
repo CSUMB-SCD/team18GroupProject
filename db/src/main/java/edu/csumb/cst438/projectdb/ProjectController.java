@@ -30,7 +30,7 @@ public class ProjectController {
         return result;
     }
 
-    @GetMapping ("/users")
+    @GetMapping("/users")
     public List<User> getAllUsers () {
         List<User> result = userRepository.findAll();
         return result;

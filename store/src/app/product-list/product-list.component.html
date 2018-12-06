@@ -24,7 +24,7 @@
             <div class="product-name">
                 {{product.name}}
             </div>
-            <img [src]="product.img" width="100%">
+            <img (click)="detailPageRedirect(product)" [src]="product.img" width="100%">
             <div class="product-desc">
                 {{product.desc}}
             </div>

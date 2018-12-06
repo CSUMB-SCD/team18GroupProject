@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from './product.service';
+import { workers } from 'cluster';
 
 @Component({
   selector: 'app-product-list',
@@ -47,5 +48,9 @@ export class ProductListComponent implements OnInit {
   showCart(): void {
     console.log('hi');
     this.cartShowing = true;
+  }
+
+  detailPageRedirect(product: Product) {
+    //pop up for details
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-first-page',
@@ -7,11 +8,12 @@ import { UserService } from '../user/user.service';
   styleUrls: ['./first-page.component.css']
 })
 export class FirstPageComponent implements OnInit {
+  User$: Object = null;
   showLoginForms: boolean;
   loginConfirmed: boolean;
   showSignupForms: boolean;
 
-  constructor(private Auth: UserService) { }
+  constructor(private Auth: UserService, private router: Router) { }
 
   ngOnInit() {
     this.showLoginForms = false;
@@ -30,14 +32,12 @@ export class FirstPageComponent implements OnInit {
     const target = event.target;
     const username = target.querySelector('#username').value;
     const password = target.querySelector('#password').value;
-    const result = this.Auth.getUsername(username);
-    if (result) {
-      console.log(result);
-    } else {
-      this.Auth.createUser(username, password);
-      console.log('not a user');
-    }
-    console.log(username, password);
+    const result = this.Auth.getUsername(username).subscribe(data => this.User$ = data);
+    this.router.navigate(['/product-list']);
+    // console.log(this.User$);
+    // if (this.User$ != null) {
+    // } else {
+    // }
   }
 
   onSignupSubmit(): void {

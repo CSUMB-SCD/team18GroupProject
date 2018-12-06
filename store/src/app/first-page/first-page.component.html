@@ -9,10 +9,10 @@
       <header class="w3-display-container w3-content w3-wide" style="max-width:100%;" id="home">
          <img class="w3-image" src="/src/assets/backgroundOtter.jpg" alt="Architecture" width="100%" height="100%">
          <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Clam</b></span> <span class="w3-padding w3-hide-small w3-white w3-opacity w3-text-black"> Store</span></h1>
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Clam</b></span> <span class="w3-padding w3-hide-small w3-white w3-opacity w3-text-black">Store</span></h1>
             <button class="login-button" (click)="showLogin()">Login</button>
             <div class="login" *ngIf="showLoginForms && !loginConfirmed">
-                <form (submit)="$event.preventDefault(); onLoginSubmit($event);" name="form" novalidate>
+                <form (submit)="onLoginSubmit($event);" name="form" novalidate>
                     <div class="form-group">
                         <label for="username">Username</label><br>
                         <input type="text" class="form-control" id="username" required />

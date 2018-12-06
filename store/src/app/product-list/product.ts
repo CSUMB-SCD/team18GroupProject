@@ -6,4 +6,6 @@ export class Product {
     img: String;
     stock: number;
     quantity: number;
+    detailedDesc: String;
+    detailsImg: String;
   }

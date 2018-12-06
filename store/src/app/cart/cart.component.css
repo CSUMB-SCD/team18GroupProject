@@ -3,6 +3,7 @@
     margin: 24px;
     width: 90%;
     padding: 16px 24px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .cartItem-price, .cartItem-quantity {
@@ -62,12 +63,86 @@
     border: 4px solid black;
     color: black;
     padding: 16px 24px;
-    width: 420px;
-    background-color: pink;
+    width: 430px;
+    background-color: #00cc99;
 }
 
 .otter-pic {
     position:absolute;
     top: 30%;
     left: 55%;
+}
+
+.modal {
+    display: block;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+    margin-bottom: 100px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 72%;
+    height: 100%;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    color: #aaaaaa;
+    right: 15%;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.title {
+    margin: 24px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.billingForms {
+    margin: 24px;
+    padding: 16px;
+    font-size: 16px;
+    border: 2px solid black;
+}
+
+.confirmButton {
+    width: 100px;
+    float: right;
+    margin: 24px;
+    margin-bottom: 40px;
+    font-size: 70px;
+    cursor: pointer;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+}
+
+.thank-you {
+    position: absolute;
+    font-size: 60px;
+    color: white;
+    left: 60%;
+    top: 25%;
+    font-family: 'Sedgwick Ave', cursive;
 }

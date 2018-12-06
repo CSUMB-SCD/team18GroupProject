@@ -1,3 +1,10 @@
+<html>
+  <head>
+      <h1 class="page-name">Products</h1>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Sedgwick+Ave" rel="stylesheet">
+  </head>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -22,9 +29,11 @@
         *ngIf="!(isHandset$ | async)">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span><h1 class="w3-xxsmall w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Clam</b></span> <span class="w3-hide-small w3-text-light-grey"> Store</span></h1></span>
+      <span><h1 class="w3-xxsmall w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Otter</b></span> <span class="w3-hide-small w3-text-light-grey"> Style</span></h1></span>
+      <div class="subtitle">The Latest Otter Fashion</div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <div class="routes" ><router-outlet></router-outlet></div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+</html>

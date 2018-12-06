@@ -4,19 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Sedgwick+Ave" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<!-- <div>
-    <button (click)="showCart()">Cart</button>
-    <div [hidden]="!cartShowing">
-        <div id="overlay">
-            <div id="text">Overlay Text</div>
-        </div>
-    </div>
-</div> -->
 <div class="product-list">
   <div class="row">
     <div *ngFor="let product of products" class="col-sm-4">
@@ -24,15 +17,37 @@
             <div class="product-name">
                 {{product.name}}
             </div>
-            <img (click)="detailPageRedirect(product)" [src]="product.img" width="100%">
+            <div (click)="detailPageRedirect(product)"><img class="otter-pic" [src]="product.img" width="100%"></div>
+            <div *ngIf="showDetails" class="modal">
+                <div class="modal-content">
+                    <span (click)="showDetails = false" class="close">&times;</span>
+                    <div class="product-name">
+                        {{productDetails.name}}
+                    </div>
+                    <img class="details-img" [src]="productDetails.img" width="400px">
+                    <img class="details-img" [src]="productDetails.detailsImg" width="400px">
+                    <div class="product-desc">
+                        {{productDetails.detailedDesc}}
+                    </div>
+                    <div class="product-price">
+                        ${{productDetails.price}}
+                    </div>
+                    <div class="product-stock">
+                        Available: {{productDetails.stock}}
+                    </div>
+                    <select (change)="onChange($event.target.value)" class="select-quantity">
+                        <option *ngFor="let x of nums" value="x">{{x}}</option>
+                    </select>
+                    <input type="button" class="add-to-cart" (click)="addItemToCart(productDetails, selectedOption)" value="Add to cart" />
+                </div>
+            </div>
             <div class="product-desc">
                 {{product.desc}}
             </div>
-            
             <div class="product-price">
                 ${{product.price}}
             </div>
-            <div class="product-price">
+            <div class="product-stock">
                 Available: {{product.stock}}
             </div>
             <select (change)="onChange($event.target.value)" class="select-quantity">
@@ -42,6 +57,16 @@
         </div>
     </div>
   </div>
+    <div *ngIf="addedToCart" class="small-modal">
+        <div class="small-modal-content">
+            <div>Added item to cart!</div>
+        </div>
+    </div>
+    <div *ngIf="notLoggedInMsg" class="small-modal">
+            <div class="small-modal-content">
+                <div>You must be signed in to Add to cart.</div>
+            </div>
+        </div>
 </div>
 
 </body>

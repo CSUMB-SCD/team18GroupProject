@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
+import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,13 +13,18 @@ export class FirstPageComponent implements OnInit {
   showLoginForms: boolean;
   loginConfirmed: boolean;
   showSignupForms: boolean;
+  isLoggedIn: boolean;
 
-  constructor(private Auth: UserService, private router: Router) { }
+  constructor(
+    private dataService: DataService,
+    private Auth: UserService,
+    private router: Router) { }
 
   ngOnInit() {
     this.showLoginForms = false;
     this.loginConfirmed = false;
     this.showSignupForms = false;
+    this.isLoggedIn = false;
   }
 
   showLogin(): void {
@@ -30,14 +36,17 @@ export class FirstPageComponent implements OnInit {
 
   onLoginSubmit(event): void {
     const target = event.target;
-    const username = target.querySelector('#username').value;
-    const password = target.querySelector('#password').value;
-    const result = this.Auth.getUsername(username).subscribe(data => this.User$ = data);
+    // const username = target.querySelector('#username').value;
+    // const password = target.querySelector('#password').value;
+    // const result = this.Auth.getUsername(username).subscribe(data => this.User$ = data);
+    this.dataService.login();
+
     this.router.navigate(['/product-list']);
-    // console.log(this.User$);
-    // if (this.User$ != null) {
-    // } else {
-    // }
+  }
+
+  redirect() {
+    this.dataService.logout();
+    this.dataService.clearCart();
   }
 
   onSignupSubmit(): void {

@@ -18,15 +18,23 @@ public class ProjectDbSeeder implements CommandLineRunner {
     IUserRepository usersRepo;
 
     public void run(String... args) throws Exception {
-        Product sweater = new Product("Otter Sweater", "You otter warm up with this faux fur sweater!", 30.00, "/src/assets/productPics/withAnimals/OtterSweater.png", 25);
-        Product shorts = new Product("Otter Swimmers", "Swim around with the otters, in fashion, with these lightweight designed shorts!", 10.59, "/src/assets/productPics/withAnimals/OtterCardigan.png", 25);
-        Product shoes = new Product("Otter Walkers", "Paddle your way through the sea of otters with these flippers!", 50.00, "/src/assets/productPics/withAnimals/OtterScarf.png", 25);
-        Product sweater2 = new Product("Otter Sweater", "You otter warm up with this faux fur sweater!", 30.00, "/src/assets/productPics/withAnimals/OtterSweater.png", 25);
+       Product sweater = new Product("Otter Sweater", "You otter warm up with this faux fur sweater.", 30.00, "/src/assets/productPics/withAnimals/OtterSweater.png", 25);
+        Product hoodie = new Product("Otter Hoodie", "Stay looking cool and keep your fur warm in this swaged out cat hoodie.", 20.00, "/src/assets/productPics/withAnimals/OtterHoodie.png", 25);
+        Product blueRSweater = new Product("Otter Sweater(Blue & Red)", "Warm up and look smoking in the deep blue sea with this navy blue and red sweater.", 35.00, "/src/assets/productPics/withAnimals/OtterBRSweater.png", 25);
+        Product cardigan= new Product("Otter Cardigan", "A formal yet colorful cardigan that will keep your pelt looking fresh at any event.", 40.00, "/src/assets/productPics/withAnimals/OtterCardigan.png", 25);
+        
+        Product fluffyJacket = new Product("Otter Puffer Jacket", "Be the coolest otter in the sea with this hip-hop inspired puffer jacket.", 50.00, "/src/assets/productPics/withAnimals/OtterFluffyJacket.png", 25);
+        Product beanie = new Product("Otter Beanie", "Keep your cute little ears warm with this specially designed beanie, for otters.", 5.00, "/src/assets/productPics/withAnimals/OtterHat.png", 25);
+        Product redSweater = new Product("Otter Sweater(Red)", "You otter warm up with this faux fur Christmas edition sweater.", 35.00, "/src/assets/productPics/withAnimals/OtterRSweatter.png", 25);
+        Product redHat = new Product("Otter Beanie (Red)", "Keep your cute little ears warm with this specially designed Christmas beanie, for otters.", 10.00, "/src/assets/productPics/withAnimals/OtterRedHat.png", 25);
+
+        Product trucker = new Product("Otter Trucker Hat", "Swim around protecting your pelt with this water proof trucker hat.", 6.00, "/src/assets/productPics/withAnimals/OtterTHat.png", 25);
+        Product scarf = new Product("Otter Scarf)", "A warm scarf designed to keep you swimming in the coldest of waters.", 35.00, "/src/assets/productPics/withAnimals/OtterScarf.png", 25);
 
         //delete db data
         productRepo.deleteAll();
         //add db seeds
-        List<Product> products = Arrays.asList(sweater, sweater2, shorts, shoes);
+        List<Product> products = Arrays.asList(sweater, fluffyJacket, redSweater, cardigan, hoodie, beanie, trucker, scarf, redHat, blueRSweater);
         productRepo.saveAll(products);
 
         User one = new User("Eros", "password");

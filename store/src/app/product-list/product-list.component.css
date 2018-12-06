@@ -3,6 +3,7 @@
 }
 .product-contents {
     padding: 24px;
+    margin-top: 20px;
     margin-bottom: 30px;
     background-color: white;
 }
@@ -13,13 +14,19 @@
 }
 .product-desc {
     margin-top: 24px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.product-price, .product-stock, .select-quantity, .add-to-cart {
+    font-family: 'Josefin Sans', sans-serif;
 }
 .product-name {
+    font-family: 'Sedgwick Ave', cursive;
     font-weight: bold;
     margin-bottom: 24px;
 }
 .otter-pic {
     margin-bottom: 24px;
+    cursor: pointer;
 }
 .add-to-cart {
     margin-top: 24px;
@@ -35,20 +42,6 @@
     margin-right: 16px;
 }
 
-#overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 2;
-    cursor: pointer;
-}
-
 #text{
     position: absolute;
     top: 50%;
@@ -57,4 +50,67 @@
     color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
+}
+
+.modal {
+    display: block;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+    margin-bottom: 100px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.small-modal {
+    display: block;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+    margin-bottom: 100px;
+}
+
+.small-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: none;
+    width: 30%;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Josefin Sans', sans-serif;
 }

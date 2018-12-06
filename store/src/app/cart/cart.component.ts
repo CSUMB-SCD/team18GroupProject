@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Cart } from './cart';
 import { Product } from '../product-list/product';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -12,14 +12,19 @@ import { DataService } from '../data.service';
 export class CartComponent implements OnInit {
   cartItems: Product[] = [];
   total: number;
+  showCheckout: boolean;
+  showThanks: boolean;
 
   constructor(
     private dataService: DataService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.getCartItems();
     this.total = 0;
+    this.showCheckout = false;
+    this.showThanks = false;
   }
 
   getCartItems(): void {
@@ -27,5 +32,20 @@ export class CartComponent implements OnInit {
     for (let i = 0; i < this.cartItems.length; i++) {
       this.total += this.cartItems[i].price;
     }
+  }
+
+  redirect() {
+    this.showCheckout = true;
+  }
+
+  confirmPurchase() {
+    this.showCheckout = false;
+    this.showThanks = true;
+  }
+
+  redirectToHome() {
+    this.dataService.clearCart();
+    this.cartItems = [];
+    this.router.navigate(['/']);
   }
 }

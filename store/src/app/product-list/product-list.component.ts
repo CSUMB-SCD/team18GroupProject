@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from './product.service';
 import { DataService } from '../data.service';
-import { workers } from 'cluster';
 
 @Component({
   selector: 'app-product-list',
@@ -16,6 +15,10 @@ export class ProductListComponent implements OnInit {
   cartItems: Product[];
   newProduct: Product = new Product();
   nums: number[];
+  showDetails: boolean;
+  productDetails: Product;
+  addedToCart: boolean;
+  notLoggedInMsg: boolean;
 
   constructor(
     private productService: ProductService,
@@ -31,6 +34,10 @@ export class ProductListComponent implements OnInit {
     }
     this.nums = temp;
     this.selectedOption = 1;
+    this.showDetails = false;
+    this.productDetails = new Product();
+    this.addedToCart = false;
+    this.notLoggedInMsg = false;
   }
 
   getProducts(): void {
@@ -43,15 +50,28 @@ export class ProductListComponent implements OnInit {
   }
 
   addItemToCart(product: Product, quantity: number): void {
-    if (quantity < product.stock) {
-      // product.quantity += quantity;
-      // product.stock -= quantity;
-      // this.cartItems.push(product);
-      this.dataService.addToCart(product, quantity);
+    if (!this.dataService.getLoginState()) {
+      this.notLoggedInMsg = true;
+      setTimeout(() => this.finishAddingToCart(), 1000);
+    } else {
+      if (quantity < product.stock) {
+        // product.quantity += quantity;
+        // product.stock -= quantity;
+        // this.cartItems.push(product);
+        this.dataService.addToCart(product, quantity);
+        this.addedToCart = true;
+        setTimeout(() => this.finishAddingToCart(), 1000);
+      }
     }
   }
 
   detailPageRedirect(product: Product) {
-    //pop up for details
+    this.productDetails = product;
+    this.showDetails = !this.showDetails;
+  }
+
+  finishAddingToCart() {
+    this.addedToCart = false;
+    this.notLoggedInMsg = false;
   }
 }

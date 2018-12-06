@@ -1,3 +1,11 @@
+<html>
+    <head>
+        <h1 class="page-name">Cart</h1>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Sedgwick+Ave" rel="stylesheet">
+    </head>
+</html>
 <div class="row">
     <div *ngFor="let cartItem of cartItems">
         <div class="cartItem-contents">
@@ -20,6 +28,33 @@
 <div *ngIf="cartItems.length > 0;else other_content">
     <span class="total">Total: ${{total}}</span>
     <button (click)="redirect()" class="checkout">Checkout</button>
+        <div *ngIf="showCheckout" class="modal">
+            <div class="modal-content">
+                <span (click)="showCheckout = false" class="close">&times;</span>
+                <div class="title">Billing Information</div>
+                <input class="billingForms" type="text" placeholder="First Name">
+                <input class="billingForms" type="text" placeholder="Last Name"><br>
+                <input class="billingForms" type="text" placeholder="Credit Card #"><br>
+                <input class="billingForms" type="text" placeholder="CVV">
+                <input class="billingForms" type="text" placeholder="Expiration"><br>
+                <input class="billingForms" type="text" placeholder="Address">
+                <input class="billingForms" type="text" placeholder="City">
+                <input class="billingForms" type="text" placeholder="State"><br>
+                <input class="billingForms" type="text" placeholder="Zip">
+                <span (click)="confirmPurchase()" class="confirm">
+                    <div class="confirmButton"><img src="https://img.icons8.com/metro/50/000000/checkout.png"></div>
+                </span>
+            </div>
+        </div>
+</div>
+<div *ngIf="showThanks" class="modal">
+    <div class="modal-content">
+        <span (click)="redirectToHome()" class="close">&times;</span>
+        <img src="https://www.howitworksdaily.com/wp-content/uploads/bX7R7EMcD4uz1LQywdUrdU7d.jpeg" class="background-image">
+        <div class="thank-you">
+            Thank you for<br>your purchase!
+        </div>
+    </div>
 </div>
 <ng-template #other_content>
     <div class="empty-cart">

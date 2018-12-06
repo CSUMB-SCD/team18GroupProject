@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from './product.service';
 import { DataService } from '../data.service';
+import { workers } from 'cluster';
 
 @Component({
   selector: 'app-product-list',
@@ -48,5 +49,9 @@ export class ProductListComponent implements OnInit {
       // this.cartItems.push(product);
       this.dataService.addToCart(product, quantity);
     }
+  }
+
+  detailPageRedirect(product: Product) {
+    //pop up for details
   }
 }

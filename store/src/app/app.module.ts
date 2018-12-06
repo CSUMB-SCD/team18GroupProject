@@ -12,6 +12,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductService } from './product-list/product.service';
 import { HttpModule } from '@angular/http';
+import { UserService } from './user/user.service';
 
 const appRoutes: Routes = [
   {path: '', component: FirstPageComponent},
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatListModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

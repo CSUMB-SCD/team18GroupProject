@@ -11,4 +11,7 @@ import edu.csumb.cst438.projectdb.entities.User;
 public interface IUserRepository extends MongoRepository<User, String> {
     @Query (value = "{'id':?0}")   
     User findByRepoId(String id);
+
+    @Query (value = "{'username':?0}")   
+    User findByUsername(String username);
 }

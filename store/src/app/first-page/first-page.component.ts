@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-first-page',
@@ -10,7 +11,7 @@ export class FirstPageComponent implements OnInit {
   loginConfirmed: boolean;
   showSignupForms: boolean;
 
-  constructor() { }
+  constructor(private Auth: UserService) { }
 
   ngOnInit() {
     this.showLoginForms = false;
@@ -25,12 +26,18 @@ export class FirstPageComponent implements OnInit {
     this.showSignupForms = !this.showSignupForms;
   }
 
-  confirmLogin(): void {
-
-  }
-
-  onLoginSubmit(): void {
-
+  onLoginSubmit(event): void {
+    const target = event.target;
+    const username = target.querySelector('#username').value;
+    const password = target.querySelector('#password').value;
+    const result = this.Auth.getUsername(username);
+    if (result) {
+      console.log(result);
+    } else {
+      this.Auth.createUser(username, password);
+      console.log('not a user');
+    }
+    console.log(username, password);
   }
 
   onSignupSubmit(): void {

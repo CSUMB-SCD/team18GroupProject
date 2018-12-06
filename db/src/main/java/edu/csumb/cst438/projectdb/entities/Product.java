@@ -29,6 +29,7 @@ public class Product {
         this.price = price;
         this.img = img;
         this.stock = stock;
+        this.quantity = 0;
     }
 
     public void setName(String aName){

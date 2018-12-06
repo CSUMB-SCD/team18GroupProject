@@ -4,6 +4,7 @@
 .product-contents {
     padding: 24px;
     margin-bottom: 30px;
+    background-color: white;
 }
 .product-list .product-contents {
     border: 4px solid black;

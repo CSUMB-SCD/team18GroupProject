@@ -29,7 +29,7 @@ public class ProjectDbSeeder implements CommandLineRunner {
         Product redHat = new Product("Otter Beanie (Red)", "Keep your cute little ears warm with this Christmas beanie.", 10.00, "/src/assets/productPics/withAnimals/OtterRedHat.png", 25);
 
         Product trucker = new Product("Otter Trucker Hat", "Swim around protecting your pelt with this water proof trucker hat.", 6.00, "/src/assets/productPics/withAnimals/OtterTHat.png", 25);
-        Product scarf = new Product("Otter Scarf)", "A warm scarf designed to keep you swimming in the coldest of waters.", 35.00, "/src/assets/productPics/withAnimals/OtterScarf.png", 25);
+        Product scarf = new Product("Otter Scarf", "A warm scarf designed to keep you swimming in the coldest of waters.", 35.00, "/src/assets/productPics/withAnimals/OtterScarf.png", 25);
 
         //delete db data
         productRepo.deleteAll();

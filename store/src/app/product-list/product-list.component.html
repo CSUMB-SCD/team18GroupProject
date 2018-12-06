@@ -35,10 +35,10 @@
             <div class="product-price">
                 Available: {{product.stock}}
             </div>
-            <select class="select-quantity">
-                <option *ngFor="let x of nums">{{x}}</option>
+            <select (change)="onChange($event.target.value)" class="select-quantity">
+                <option *ngFor="let x of nums" value="x">{{x}}</option>
             </select>
-            <input type="button" class="add-to-cart" ng-click="addItemToCart(product)" value="Add to cart" />
+            <input type="button" class="add-to-cart" (click)="addItemToCart(product, selectedOption)" value="Add to cart" />
         </div>
     </div>
   </div>

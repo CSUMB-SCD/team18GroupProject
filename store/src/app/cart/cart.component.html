@@ -1,0 +1,30 @@
+<div class="row">
+    <div *ngFor="let cartItem of cartItems">
+        <div class="cartItem-contents">
+            <img class="otter" [src]="cartItem.img">
+            <span class="cartItem-name">
+                {{cartItem.name}}
+            </span>
+            <span class="cartItem-price">
+                ${{cartItem.price}}
+            </span>
+            <span class="cartItem-quantity">
+                X{{cartItem.quantity}}
+            </span>
+            <div class="cartItem-desc">
+                {{cartItem.desc}}
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="cartItems.length > 0;else other_content">
+    <span class="total">Total: ${{total}}</span>
+    <button (click)="redirect()" class="checkout">Checkout</button>
+</div>
+<ng-template #other_content>
+    <div class="empty-cart">
+        <div class="cart-empty-text">Empty Cart</div>
+        <div class="empty-text">No sense of fashion...</div>
+        <img class="otter-pic" src="https://i.pinimg.com/originals/e5/1b/47/e51b4787edb3fccab15c372ad95c5afd.gif">
+    </div>
+</ng-template>

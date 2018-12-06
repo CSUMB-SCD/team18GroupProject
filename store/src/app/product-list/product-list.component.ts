@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from './product.service';
+import { DataService } from '../data.service';
 import { workers } from 'cluster';
 
 @Component({
@@ -10,14 +11,15 @@ import { workers } from 'cluster';
 })
 
 export class ProductListComponent implements OnInit {
+  selectedOption: number;
   products: Product[];
+  cartItems: Product[];
   newProduct: Product = new Product();
-  nums: any[];
-  cart: Product[];
-  cartShowing: boolean;
+  nums: number[];
 
   constructor(
     private productService: ProductService,
+    private dataService: DataService,
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class ProductListComponent implements OnInit {
         temp[i] = i + 1;
     }
     this.nums = temp;
-    this.cartShowing = false;
+    this.selectedOption = 1;
   }
 
   getProducts(): void {
@@ -36,18 +38,17 @@ export class ProductListComponent implements OnInit {
       .then(products => this.products = products );
   }
 
-  addItemToCart(product: Product, quantity: any): void {
-    if (quantity < product.stock) {
-      product.quantity = quantity;
-      product.stock -= quantity;
-      this.cart.push(product);
-    }
-    console.log('hi');
+  onChange(val): void {
+    this.selectedOption = val;
   }
 
-  showCart(): void {
-    console.log('hi');
-    this.cartShowing = true;
+  addItemToCart(product: Product, quantity: number): void {
+    if (quantity < product.stock) {
+      // product.quantity += quantity;
+      // product.stock -= quantity;
+      // this.cartItems.push(product);
+      this.dataService.addToCart(product, quantity);
+    }
   }
 
   detailPageRedirect(product: Product) {

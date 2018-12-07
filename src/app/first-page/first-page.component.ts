@@ -16,7 +16,7 @@ export class FirstPageComponent implements OnInit {
   isLoggedIn: boolean;
 
   constructor(
-    private dataService: DataService,
+    public dataService: DataService,
     private Auth: UserService,
     private router: Router) { }
 

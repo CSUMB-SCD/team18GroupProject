@@ -22,91 +22,91 @@ public class ProjectDbSeeder implements CommandLineRunner {
             "Otter Sweater", 
             "You otter warm up in the deep blue sea with this faux fur sweater.", 
             30.00, 
-            "/src/assets/productPics/withAnimals/OtterSweater.png", 
+            "https://anf.scene7.com/is/image/anf/A-20181129-USCA-D-HP-na?$marketing$&wid=1568", 
             25, 
             "Made with the highest quality fabrics found only in the waters of the Red Sea", 
-            "/src/assets/productPics/noAnimals/sweater.png"
+            "https://i.ibb.co/Fw3wkBs/sweater.png"
             );
         Product hoodie = new Product(
             "Otter Hoodie", 
             "Stay looking cool with your otter pals and keep your fur warm in this swaged out cat hoodie.", 
             20.00, 
-            "/src/assets/productPics/withAnimals/OtterHoodie.png", 
+            "https://i.ibb.co/jDtY6Y1/Otter-Hoodie.png", 
             25, 
             "Made with the finest fabrics from Asia",
-            "/src/assets/productPics/noAnimals/hoodie.png"
+            "https://i.ibb.co/gmqm3Ct/hoodie.png"
             );
         Product blueRSweater = new Product(
             "Otter Sweater(Blue & Red)", 
             "Warm up and look smoking in the deep blue sea with this navy blue and red sweater.", 
             35.00, 
-            "/src/assets/productPics/withAnimals/OtterBRSweater.png", 
+            "https://i.ibb.co/J35hjSn/Otter-BRSweater.png", 
             25, 
             "Warm and cozy wool",
-            "/src/assets/productPics/noAnimals/BRSweater.png"
+            "https://i.ibb.co/MpZN6hm/BRSweater.png"
             );
         Product cardigan= new Product
         ("Otter Cardigan", 
         "A formal yet colorful cardigan that will keep your pelt looking fresh at any event.", 
         40.00, 
-        "/src/assets/productPics/withAnimals/OtterCardigan.png", 
+        "https://i.ibb.co/VTpDbrr/Otter-Cardigan.png", 
         25, 
         "A cheap yet luxirious cashmere garment",
-        "/src/assets/productPics/noAnimals/Cardigan.png"
+        "https://i.ibb.co/HNGtDt5/Cardigan.png"
         );
         Product fluffyJacket = new Product(
             "Otter Puffer Jacket", 
             "Be the coolest otter in the sea with this hip-hop inspired puffer jacket.", 
             5000.00, 
-            "/src/assets/productPics/withAnimals/OtterFluffyJacket.png", 
+            "https://i.ibb.co/5G7PKRw/Otter-Fluffy-Jacket.png", 
             25, 
             "From the Monté Vuitton collection",
-            "/src/assets/productPics/noAnimals/FluffyJacket.png"
+            "https://i.ibb.co/TKKLWP2/Fluffy-Jacket.png"
             );
         Product beanie = new Product(
             "Otter Beanie", 
             "Keep your cute little ears warm with this specially designed beanie, for otters.", 
             5.00, 
-            "/src/assets/productPics/withAnimals/OtterHat.png", 
+            "https://i.ibb.co/p1zdTYh/OtterHat.png", 
             25, 
             "Wool beanie",
-            "/src/assets/productPics/noAnimals/Hat.png"
+            "https://i.ibb.co/jDQ4wFK/Hat.png"
             );
         Product redSweater = new Product(
             "Otter Sweater(Red)", 
             "You otter warm up with this faux fur Christmas edition sweater.", 
             35.00, 
-            "/src/assets/productPics/withAnimals/OtterRSweatter.png", 
+            "https://i.ibb.co/fFSLM66/Otter-RSweatter.png", 
             25, 
             "Just in times for the holidays",
-            "/src/assets/productPics/noAnimals/RSweatter.png"
+            "https://i.ibb.co/0t2X1R0/RSweatter.png"
             );
         Product redHat = new Product(
             "Otter Beanie (Red)", 
             "Keep your cute little ears warm with this Christmas beanie.", 
             10.00, 
-            "/src/assets/productPics/withAnimals/OtterRedHat.png", 
+            "https://i.ibb.co/0XTdMFY/Otter-Red-Hat.png", 
             25, 
             "Wooly Christmas theme head hear",
-            "/src/assets/productPics/noAnimals/RedHat.png"
+            "https://i.ibb.co/dgPzhjH/RedHat.png"
             );
         Product trucker = new Product(
             "Otter Trucker Hat", 
             "Swim around protecting your pelt with this water proof trucker hat.", 
             6.00, 
-            "/src/assets/productPics/withAnimals/OtterTHat.png", 
+            "https://i.ibb.co/gVrf4bL/Otter-THat.png", 
             25, 
             "Lets getting clappin'",
-            "/src/assets/productPics/noAnimals/THat.png"
+            "https://i.ibb.co/zRNj72B/THat.png"
             );
         Product scarf = new Product(
             "Otter Scarf", 
             "A warm scarf designed to keep you swimming in the coldest of waters.", 
             35.00, 
-            "/src/assets/productPics/withAnimals/OtterScarf.png", 
+            "https://i.ibb.co/Cmny3Fv/otter-Scarf.png", 
             25, 
             "Warm cashmere for your neck",
-            "/src/assets/productPics/noAnimals/Scarf.png"
+            "https://i.ibb.co/ScsxfTg/Scarf.png"
             );
 
         //delete db data

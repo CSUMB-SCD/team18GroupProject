@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <title>OtterStyle</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <body>
+      <!-- Header -->
+      <header class="w3-display-container w3-content w3-wide" style="max-width:100%;" id="home">
+         <img class="w3-image" src="http://christianbackgrounds.info/new_images/82/63972327-otter-wallpapers.jpg" alt="Architecture" width="100%" height="100%">
+         <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Otter</b></span> <span class="w3-padding w3-hide-small w3-white w3-opacity w3-text-black">Style</span></h1>
+            <div *ngIf="!dataService.getLoginState();else other_content">
+                <button class="login-button" (click)="showLogin()">Login</button>
+                <div class="login" *ngIf="showLoginForms && !loginConfirmed">
+                    <form (submit)="onLoginSubmit($event);" name="form" autocomplete="off" novalidate>
+                        <div class="form-group">
+                            <label for="username">Username</label><br>
+                            <input type="text" class="form-control" id="username" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label><br>
+                            <input type="password" class="form-control" id="password" required />
+                        </div>
+                        <input class="submit-button" type="submit" />
+                    </form>
+                </div>
+                <button class="signup-button" (click)="showSignup()">Signup</button>
+                <div class="signup" *ngIf="showSignupForms && !signupConfirmed">
+                    <form (submit)="onSignupSubmit($event)" name="form" novalidate>
+                        <div class="form-group">
+                            <label for="username">Username</label><br>
+                            <input type="text" class="form-control" name="username-signup" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label><br>
+                            <input type="password" class="form-control" name="password-signup" required />
+                        </div>
+                        <input class="submit-button" type="submit" />
+                    </form>
+                </div>
+            </div>
+         </div>
+         <ng-template #other_content>
+            <button class="logout-button" (click)="redirect()">Logout</button>
+         </ng-template>
+      </header>
+   </body>
+</html>

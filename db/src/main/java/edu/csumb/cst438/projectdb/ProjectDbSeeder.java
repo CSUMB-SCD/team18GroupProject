@@ -22,7 +22,7 @@ public class ProjectDbSeeder implements CommandLineRunner {
             "Otter Sweater", 
             "You otter warm up in the deep blue sea with this faux fur sweater.", 
             30.00, 
-            "https://anf.scene7.com/is/image/anf/A-20181129-USCA-D-HP-na?$marketing$&wid=1568", 
+            "https://i.ibb.co/r7JDWtB/Otter-Sweater.png", 
             25, 
             "Made with the highest quality fabrics found only in the waters of the Red Sea", 
             "https://i.ibb.co/Fw3wkBs/sweater.png"

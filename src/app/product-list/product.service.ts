@@ -4,7 +4,7 @@ import { Headers, Http } from '@angular/http';
 
 @Injectable()
 export class ProductService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'hhttps://proddata18.herokuapp.com';
 
   constructor(private http: Http) { }
 

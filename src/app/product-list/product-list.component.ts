@@ -42,7 +42,7 @@ export class ProductListComponent implements OnInit {
 
   getProducts(): void {
     this.productService.getProducts()
-      .then(products => this.products = products );
+      .then(products => this.products = products);
   }
 
   onChange(val): void {

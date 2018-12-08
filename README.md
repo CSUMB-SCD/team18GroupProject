@@ -1,5 +1,10 @@
 Link: https://otteroutfitters.herokuapp.com	
 
+Special instructions:
+	Run on Google Chrome
+	The Allow-Control-Allow-Origin extension is needed for products to be shown(Image currently broken):
+		https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
+
 # Cst438Group
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.

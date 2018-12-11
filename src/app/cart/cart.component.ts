@@ -21,8 +21,8 @@ export class CartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getCartItems();
     this.total = 0;
+    this.getCartItems();
     this.showCheckout = false;
     this.showThanks = false;
   }
@@ -39,6 +39,10 @@ export class CartComponent implements OnInit {
   }
 
   confirmPurchase() {
+    this.cartItems = this.dataService.getCart();
+    for (let i = 0; i < this.cartItems.length; i++) {
+      this.cartItems[i].stock -= this.cartItems[i].quantity;
+    }
     this.showCheckout = false;
     this.showThanks = true;
   }

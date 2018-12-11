@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Product } from './product-list/product';
+import { Product } from './Product';
 
 
 @Injectable({
@@ -31,9 +31,6 @@ export class DataService {
     addToCart(product: Product, quantity: number) {
         // const index = this.cart.findIndex(p => p.id === product.id);
         // if (index === -1) {
-          console.log(product.quantity);
-          console.log(quantity);
-          product.quantity += quantity;
           this.cart.push(product);
         // } else {
         //   this.cart[index].quantity = this.cart[index].quantity + quantity;

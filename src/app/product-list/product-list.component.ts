@@ -165,7 +165,6 @@ export class ProductListComponent implements OnInit {
       this.products.push(this.scarf);
       this.products.push(this.redHat);
       this.products.push(this.blueRSweater);
-      console.log(this.products);
   }
 
   onChange(val): void {
